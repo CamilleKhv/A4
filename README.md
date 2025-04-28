@@ -10,7 +10,6 @@ The application is built with Flask and deployed on an Ubuntu virtual machine wi
   You can download Python from [here](https://www.python.org/downloads/).
 
 You can check your version using:
-
 `py --version`
 
 ## Libraries
@@ -40,18 +39,18 @@ src/                  # Contains all source code (Flask application)
 ### Local Development 
 To run the application locally:
 
-- Open a terminal (PowerShell or VSCode terminal).
+- Open a terminal
 - Navigate into the project folder:
 
-`cd C:\Users\Camille\Documents\Scolaire\A4\A4_code`
+`cd src/`
 
-Set the Flask app environment variable:
+- Set the Flask app environment variable:
 `$env:FLASK_APP="app.py"`
 
-Run Flask using:
+- Run Flask using:
 `py -m flask run`
 
-Open your browser and go to:
+- Open your browser and go to:
 `http://127.0.0.1:8000`
 
 ### Important: Make sure your .env file is present and contains valid Azure credentials.
