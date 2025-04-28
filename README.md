@@ -41,7 +41,6 @@ To run the application locally:
 
 - Open a terminal
 - Navigate into the project folder:
-
 `cd src/`
 
 - Set the Flask app environment variable:
