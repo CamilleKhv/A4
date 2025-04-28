@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Your Profile</title>
+    <style>
+        input[disabled] {
+            background-color: #f0f0f0;
+            color: #555;
+            border: 1px solid #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Edit Your Profile</h1>
+
+    {% if result is defined and result is not none %}
+    <div style="margin-bottom: 12px; padding: 7px; background-color: lightgray">
+        {% if result.ok %}
+            Profile stored!
+        {% else %}
+            <div>{{ result.text }}</div>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <form method="POST">
+        <label>User ID:</label><br>
+        <input type="text" name="id" value="{{ profile.id }}" disabled /><br><br>
+
+        <label>Display Name:</label><br>
+        <input type="text" name="displayName" value="{{ profile.displayName }}" disabled /><br><br>
+
+        <label>Given Name:</label><br>
+        <input type="text" name="givenName" value="{{ profile.givenName }}" disabled /><br><br>
+
+        <label>Surname:</label><br>
+        <input type="text" name="surname" value="{{ profile.surname }}" disabled /><br><br>
+
+        <label>Mobile Phone:</label><br>
+        <input type="text" name="mobilePhone" value="{{ profile.mobilePhone or '' }}" /><br><br>
+
+        <label>Business Phone:</label><br>
+        <input type="text" name="businessPhones" value="{{ profile.businessPhones[0] if profile.businessPhones else '' }}" /><br><br>
+
+        <button type="submit">Update Profile</button>
+    </form>
+
+    <div style="padding-top: 2rem">
+        <a href="/">Back to Home</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tenant Users</title>
+</head>
+<body>
+    <h1>List of Users</h1>
+    <ul>
+    {% for user in users %}
+        <li>{{ user.displayName }} ({{ user.mail or user.userPrincipalName }})</li>
+    {% endfor %}
+    </ul>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

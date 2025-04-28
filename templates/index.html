@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INF-2310 Assignment 4</title>
+</head>
+<body>
+
+    {% if user %}
+        <h1>Welcome, {{ user.name }}!</h1>
+        <p>Email: {{ user.preferred_username }}</p>
+    {% else %}
+        <h1>Welcome to the Application!</h1>
+        <p>Please log in to access all features.</p>
+    {% endif %}
+    
+    <!-- Show all the links even if not logged in -->
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('users') }}">Show Users</a></li>
+            <li><a href="{{ url_for('edit_profile') }}">Edit Profile</a></li>
+            {% if user %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+</body>
+</html>
