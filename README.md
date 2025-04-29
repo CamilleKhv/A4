@@ -5,6 +5,10 @@ This project implements a secure web application that allows users to authentica
 
 The application is built with Flask and deployed on an Ubuntu virtual machine with HTTPS enabled via a Let's Encrypt TLS certificate.
 
+## To access the deployed application
+Go to this url
+`https://caker1170.x310.net/`
+
 ## Requirements
 - Python 3.10+ (Recommended version: Python 3.10 or higher).  
   You can download Python from [here](https://www.python.org/downloads/).
