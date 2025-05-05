@@ -7,7 +7,15 @@ The application is built with Flask and deployed on an Ubuntu virtual machine wi
 
 ## To access the deployed application
 Go to this url
-`https://caker1170.x310.net/`
+`https://maaub8373.westeurope.cloudapp.azure.com/`
+
+### Deployment on VM
+The app is served in production using Gunicorn and NGINX with HTTPS via Let's Encrypt.  
+A systemd service (`flaskapp.service`) was created to ensure the application runs continuously and restarts on boot.
+
+To start the app on the VM:
+`sudo systemctl start flaskapp`
+
 
 ## Requirements
 - Python 3.10+ (Recommended version: Python 3.10 or higher).  
@@ -22,6 +30,7 @@ The application requires the following Python libraries:
 - requests
 - msal
 - python-dotenv
+- gunicorn
 
 They are listed in requirements.txt.
 To install them, run:
@@ -54,18 +63,20 @@ To run the application locally:
 `py -m flask run`
 
 - Open your browser and go to:
-`http://127.0.0.1:8000`
+`http://127.0.0.1:5000`
 
-### Important: Make sure your .env file is present and contains valid Azure credentials.
 
 ## Important Notes
 
+### Make sure your .env file is present and contains valid Azure credentials
+
 ### Environment File:
-The .env file is critical and contains secrets like:
+The .env file contains secrets like:
 - CLIENT_ID
 - CLIENT_SECRET
 - TENANT_ID
 - SECRET_KEY
+The .env file with valid keys from Azure Portal is essential for the project.
 
 ### Microsoft Graph API Scopes:
 The app uses:
